@@ -2,6 +2,7 @@ package com.itb.in2em.pizzarianapoli.controller;
 
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -45,8 +46,8 @@ public class ProdutoController {
   // Listando todos os produtos
 
   @GetMapping
-  public List<Produto> findAll() {
-    return produtoService.listarTodos();
+  public ResponseEntity <List<Produto>> findAll() {
+    return ResponseEntity.ok (produtoService.listarTodos());
   }
   
   // Buscar produto pelo Id
